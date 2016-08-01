@@ -18,6 +18,7 @@ If you can even read this, you're probably on Google Chrome already... but the f
 3. Install Xcode
 4. [Install Sublime Text 3](https://www.sublimetext.com/3)
 5. Set up [Sublime package control](https://packagecontrol.io/installation).
+  * Advanced install these packages: `Agila Theme, React ES6 Snippets, Babel, Babel Snippets, HTML5, SCSS, HTMLAttributes, Gitgutter,`
 6. Install [Slack](https://slack.com/downloads) and sign into your slack teams.
 7. Log into [Facebook](https://www.facebook.com/), because you definitely need the distractions.
 8. Install [Skype](https://www.skype.com/en/)
@@ -31,3 +32,14 @@ If you can even read this, you're probably on Google Chrome already... but the f
   * `brew install node;`
 12. `cd ~/; mkdir Workspace; mkdir Portfolio; cd Workspace; git clone https://github.com/chelseavalentine/Standards.git; cd Standards; cp .bash_profile ~/.bash_profile`
 13. Open Finder, View -> Show Path Bar
+14. [Install JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html), or whichever one you have to lol
+14. [Install Android Studio](https://developer.android.com/studio/index.html)
+15. [Install pip](https://pip.pypa.io/en/stable/installing/)
+15. [Install Intellij](https://www.jetbrains.com/idea/download/)
+16. Install [CLion](https://www.jetbrains.com/clion/), [PyCharm](https://www.jetbrains.com/pycharm/), 
+16. [Install Typora](https://www.macupdate.com/app/mac/52992/typora)
+17. [Install Adobe Creative Cloud](https://creative.adobe.com/products/download/creative-cloud)
+  * Install Photoshop, Illustrator, and Acrobat DC
+18. Show all files in finder: `defaults write com.apple.Finder AppleShowAllFiles YES;killall Finder`
+19. Install mysql: `brew install homebrew/versions/mysql56;mysql.server start; mysql_secure_installation`
+20. [Install Redis](http://redis.io/download)
