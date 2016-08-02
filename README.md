@@ -11,6 +11,8 @@ If you can even read this, you're probably on Google Chrome already... but the f
 1. Log into [Spotify](https://play.spotify.com/) and turn on some music because this is going to be a long journey
 2. Configure system preferences
   * [Enable root user](https://support.apple.com/en-us/HT204012)
+  * Advanced optionsin Users & Groups: join the root group
+  * Display full name
   * Display: Scaled & more space
   * Keyboard: Fast key repeat, short delay until repeat, adjust keyboard brightness, show keyboard & character viewers, add 2-set Korean keyboard
   * Trackpad: Enable all, speed up tracking speed
