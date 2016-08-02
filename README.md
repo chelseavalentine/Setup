@@ -33,7 +33,7 @@ If you can even read this, you're probably on Google Chrome already... but the f
   * `brew install node;`
 12. `cd ~/; mkdir Workspace; mkdir Portfolio; cd Workspace; git clone https://github.com/chelseavalentine/Standards.git; cd Standards; cp .bash_profile ~/.bash_profile`
 13. Open Finder, View -> Show Path Bar
-14. [Install JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html), or whichever one you have to lol
+14. [Install JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html), or whichever one you have to lol
 14. [Install Android Studio](https://developer.android.com/studio/index.html)
 15. [Install pip](https://pip.pypa.io/en/stable/installing/)
 15. [Install Intellij](https://www.jetbrains.com/idea/download/)
@@ -45,4 +45,4 @@ If you can even read this, you're probably on Google Chrome already... but the f
 19. Install mysql: `brew install homebrew/versions/mysql56;mysql.server start; mysql_secure_installation`
 20. [Install Redis](http://redis.io/download)
 21. Install webpack: `npm install -g webpack`
-22. Log into [Sunrise](https://calendar.sunrise.am/)
+22. Log into [Sunrise](https://calendar.sunrise.am/) :rip:
