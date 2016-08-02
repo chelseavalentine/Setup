@@ -35,6 +35,7 @@ If you can even read this, you're probably on Google Chrome already... but the f
 13. Open Finder, View -> Show Path Bar
 14. [Install JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html), or whichever one you have to lol
 14. [Install Android Studio](https://developer.android.com/studio/index.html)
+  * Install more APKs (Tools -> Android -> Emulator?)
 15. [Install pip](https://pip.pypa.io/en/stable/installing/)
 15. [Install Intellij](https://www.jetbrains.com/idea/download/)
 16. Install [CLion](https://www.jetbrains.com/clion/), [PyCharm](https://www.jetbrains.com/pycharm/)
