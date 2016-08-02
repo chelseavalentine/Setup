@@ -18,13 +18,14 @@ If you can even read this, you're probably on Google Chrome already... but the f
 3. Install Xcode
 4. [Install Sublime Text 3](https://www.sublimetext.com/3)
 5. Set up [Sublime package control](https://packagecontrol.io/installation).
-  * Advanced install these packages: `Agila Theme, React ES6 Snippets, Babel, Babel Snippets, HTML5, SCSS, HTMLAttributes, Gitgutter,`
+  * Advanced install these packages: `Agila Theme, React ES6 Snippets, Babel, Babel Snippets, HTML5, SCSS, SCSS Snippets, HTMLAttributes, Gitgutter,`
 6. Install [Slack](https://slack.com/downloads) and sign into your slack teams.
 7. Log into [Facebook](https://www.facebook.com/), because you definitely need the distractions.
 8. Install [Skype](https://www.skype.com/en/)
 9. Configure your git
   * `git config --global user.name "Chelsea Valentine"`
   * `git config --global user.email cv851@nyu.edu`
+  * `git config --global push.default simple`
   * Ask git to [stop asking for your login information each time](https://help.github.com/articles/caching-your-github-password-in-git/)
     - Spoiler: you probably just need to paste in `git config --global credential.helper osxkeychain`
 10. Install [Sketch](https://www.sketchapp.com/) and [find the license code in your email](https://inbox.google.com/search/sketch%20license%20thank%20you%20for%20buying%20sketch)
@@ -36,10 +37,12 @@ If you can even read this, you're probably on Google Chrome already... but the f
 14. [Install Android Studio](https://developer.android.com/studio/index.html)
 15. [Install pip](https://pip.pypa.io/en/stable/installing/)
 15. [Install Intellij](https://www.jetbrains.com/idea/download/)
-16. Install [CLion](https://www.jetbrains.com/clion/), [PyCharm](https://www.jetbrains.com/pycharm/), 
+16. Install [CLion](https://www.jetbrains.com/clion/), [PyCharm](https://www.jetbrains.com/pycharm/)
 16. [Install Typora](https://www.macupdate.com/app/mac/52992/typora)
 17. [Install Adobe Creative Cloud](https://creative.adobe.com/products/download/creative-cloud)
   * Install Photoshop, Illustrator, and Acrobat DC
 18. Show all files in finder: `defaults write com.apple.Finder AppleShowAllFiles YES;killall Finder`
 19. Install mysql: `brew install homebrew/versions/mysql56;mysql.server start; mysql_secure_installation`
 20. [Install Redis](http://redis.io/download)
+21. Install webpack: `npm install -g webpack`
+22. Log into [Sunrise](https://calendar.sunrise.am/)
