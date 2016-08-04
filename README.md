@@ -17,10 +17,11 @@ If you can even read this, you're probably on Google Chrome already... but the f
   * Keyboard: Fast key repeat, short delay until repeat, adjust keyboard brightness, show keyboard & character viewers, add 2-set Korean keyboard
   * Trackpad: Enable all, speed up tracking speed
   * Dock: Smaller, a little magnification, automatically hide/show dock (?)
+  * Date & time: display the time with seconds, show date
 3. Install Xcode
 4. [Install Sublime Text 3](https://www.sublimetext.com/3)
 5. Set up [Sublime package control](https://packagecontrol.io/installation).
-  * Advanced install these packages: `Agila Theme, React ES6 Snippets, Babel, Babel Snippets, HTML5, SCSS, SCSS Snippets, HTMLAttributes, Gitgutter,`
+  * Advanced install these packages: `Agila Theme, React ES6 Snippets, Babel, Babel Snippets, HTML5, SCSS, SCSS Snippets, HTMLAttributes, GitGutter,`
 6. Install [Slack](https://slack.com/downloads) and sign into your slack teams.
 7. Log into [Facebook](https://www.facebook.com/), because you definitely need the distractions.
 8. Install [Skype](https://www.skype.com/en/)
@@ -37,7 +38,7 @@ If you can even read this, you're probably on Google Chrome already... but the f
 13. Open Finder, View -> Show Path Bar
 14. [Install JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html), or whichever one you have to lol
 14. [Install Android Studio](https://developer.android.com/studio/index.html)
-  * Install more APKs (Tools -> Android -> Emulator?)
+  * Install more APKs (Tools -> Android -> SDK Manager)
 15. [Install pip](https://pip.pypa.io/en/stable/installing/)
 15. [Install Intellij](https://www.jetbrains.com/idea/download/)
 16. Install [CLion](https://www.jetbrains.com/clion/), [PyCharm](https://www.jetbrains.com/pycharm/)
@@ -49,3 +50,14 @@ If you can even read this, you're probably on Google Chrome already... but the f
 20. [Install Redis](http://redis.io/download)
 21. Install webpack: `npm install -g webpack`
 22. Log into [Sunrise](https://calendar.sunrise.am/) :rip:
+
+
+### Settlement phase
+
+1. [Log into tumblr](https://www.tumblr.com/login)
+2. [Sign into Dramafever](https://www.dramafever.com/) (don't judge me)
+3. [Sign into Viki](https://www.viki.com/)
+4. [Sign into Crunchyroll](http://www.crunchyroll.com/)
+5. [Download Roboto](https://www.fontsquirrel.com/fonts/roboto) and [download Noto](https://www.fontsquirrel.com/fonts/noto-sans)
+6. [Sign into Amazon](https://amazon.com)
+7. [Sign into Pivotal Tracker](https://www.pivotaltracker.com/signin)
