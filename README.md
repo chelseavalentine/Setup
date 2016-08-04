@@ -61,3 +61,4 @@ If you can even read this, you're probably on Google Chrome already... but the f
 5. [Download Roboto](https://www.fontsquirrel.com/fonts/roboto) and [download Noto](https://www.fontsquirrel.com/fonts/noto-sans)
 6. [Sign into Amazon](https://amazon.com)
 7. [Sign into Pivotal Tracker](https://www.pivotaltracker.com/signin)
+8. [Download Lingo](https://www.lingoapp.com/)
