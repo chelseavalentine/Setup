@@ -46,6 +46,7 @@ If you can even read this, you're probably on Google Chrome already... but the f
 17. [Install Adobe Creative Cloud](https://creative.adobe.com/products/download/creative-cloud)
   * Install Photoshop, Illustrator, and Acrobat DC
 18. Show all files in finder: `defaults write com.apple.Finder AppleShowAllFiles YES;killall Finder`
+19. Install mongodb: `brew install mongodb`
 19. Install mysql: `brew install homebrew/versions/mysql56;mysql.server start; mysql_secure_installation`
 20. [Install Redis](http://redis.io/download)
 21. Install webpack: `npm install -g webpack`
