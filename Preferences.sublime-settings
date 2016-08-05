@@ -1,7 +1,9 @@
 {
 	"color_scheme": "Packages/Agila Theme/Agila Oceanic Next.tmTheme",
+	"ensure_newline_at_eof_on_save": true,
 	"ignored_packages":
 	[
+		"Colorsublime",
 		"Vintage"
 	],
 	"theme": "Agila.sublime-theme",
@@ -20,6 +22,7 @@
 	"theme_agila_vertical_scrollbar_thinnest": true,
 	"trailing_spaces_highlight_color": "",
 	"trailing_spaces_trim_on_save": true,
-	"ensure_newline_at_eof_on_save": true,
-	"trim_trailing_white_space_on_save": true
+	"trim_trailing_white_space_on_save": true,
+	"tab_size": 2,
+  "translate_tabs_to_spaces": true
 }
