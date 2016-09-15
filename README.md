@@ -21,7 +21,7 @@ If you can even read this, you're probably on Google Chrome already... but the f
 3. Install Xcode
 4. [Install Sublime Text 3](https://www.sublimetext.com/3)
 5. Set up [Sublime package control](https://packagecontrol.io/installation).
-  * Advanced install these packages: `Agila Theme, React ES6 Snippets, Babel, Babel Snippets, HTML5, SCSS, SCSS Snippets, HTMLAttributes, GitGutter, Color Highlighter, JavaScript Completions, JavaScript Snippets, Pretty JSON`
+  * Advanced install these packages: `Agila Theme, React ES6 Snippets, Babel, Babel Snippets, HTML5, SCSS, SCSS Snippets, HTMLAttributes, GitGutter, Color Highlighter, JavaScript Completions, JavaScript Snippets, Pretty JSON, Enhanced Clojure`
 6. Install [Slack](https://slack.com/downloads) and sign into your slack teams.
 7. Log into [Facebook](https://www.facebook.com/), because you definitely need the distractions.
 8. Install [Skype](https://www.skype.com/en/)
