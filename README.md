@@ -63,3 +63,4 @@ If you can even read this, you're probably on Google Chrome already... but the f
 6. [Sign into Amazon](https://amazon.com)
 7. [Sign into Pivotal Tracker](https://www.pivotaltracker.com/signin)
 8. [Download Lingo](https://www.lingoapp.com/)
+9. [jshint] `npm install -g jshint`
