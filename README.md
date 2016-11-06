@@ -1,7 +1,7 @@
 # Standards
 Personal code style standards, setting up a laptop, and environments. I had to set up a laptop a few too many times this summer. Time to document it. This assumes you're using a Mac.
 
-### Seed phase
+### Setup
 
 If you can even read this, you're probably on Google Chrome already... but the first step is to of course install Google Chrome.
 
@@ -21,7 +21,7 @@ If you can even read this, you're probably on Google Chrome already... but the f
 3. Install Xcode
 4. [Install Sublime Text 3](https://www.sublimetext.com/3)
 5. Set up [Sublime package control](https://packagecontrol.io/installation).
-  * Advanced install these packages: `Agila Theme, React ES6 Snippets, Babel, Babel Snippets, HTML5, SCSS, SCSS Snippets, HTMLAttributes, GitGutter, Color Highlighter, JavaScript Completions, JavaScript Snippets, Pretty JSON, Enhanced Clojure, paredit, Theme - Spacegray, Handlebars`
+  * Advanced install these packages: `Agila Theme, React ES6 Snippets, Babel, Babel Snippets, HTML5, SCSS, SCSS Snippets, HTMLAttributes, GitGutter, Color Highlighter, JavaScript Completions, JavaScript Snippets, Pretty JSON, Enhanced Clojure, paredit, Theme - Spacegray, Handlebars, Auto Close HTML Tags`
 6. Install [Slack](https://slack.com/downloads) and sign into your slack teams.
 7. Log into [Facebook](https://www.facebook.com/), because you definitely need the distractions.
 8. Install [Skype](https://www.skype.com/en/)
@@ -37,20 +37,20 @@ If you can even read this, you're probably on Google Chrome already... but the f
 12. `cd ~/; mkdir Workspace; mkdir Portfolio; cd Workspace; git clone https://github.com/chelseavalentine/Standards.git; cd Standards; cp .bash_profile ~/.bash_profile`
 13. Open Finder, View -> Show Path Bar
 14. [Install JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html), or whichever one you have to lol
-14. [Install Android Studio](https://developer.android.com/studio/index.html)
+15. [Install Android Studio](https://developer.android.com/studio/index.html)
   * Install more APKs (Tools -> Android -> SDK Manager)
-15. [Install pip](https://pip.pypa.io/en/stable/installing/)
-15. [Install Intellij](https://www.jetbrains.com/idea/download/)
-16. Install [CLion](https://www.jetbrains.com/clion/), [PyCharm](https://www.jetbrains.com/pycharm/)
-16. [Install Typora](https://www.macupdate.com/app/mac/52992/typora)
-17. [Install Adobe Creative Cloud](https://creative.adobe.com/products/download/creative-cloud)
+16. [Install pip](https://pip.pypa.io/en/stable/installing/)
+17. [Install Intellij](https://www.jetbrains.com/idea/download/)
+18. Install [CLion](https://www.jetbrains.com/clion/), [PyCharm](https://www.jetbrains.com/pycharm/)
+19. [Install Typora](https://www.macupdate.com/app/mac/52992/typora)
+20. [Install Adobe Creative Cloud](https://creative.adobe.com/products/download/creative-cloud)
   * Install Photoshop, Illustrator, and Acrobat DC
-18. Show all files in finder: `defaults write com.apple.Finder AppleShowAllFiles YES;killall Finder`
-19. Install mongodb: `brew install mongodb`
-19. Install mysql: `brew install homebrew/versions/mysql56;mysql.server start; mysql_secure_installation`
-20. [Install Redis](http://redis.io/download)
-21. Install webpack: `npm install -g webpack`
-22. Log into [Sunrise](https://calendar.sunrise.am/) :rip:
+21. Show all files in finder: `defaults write com.apple.Finder AppleShowAllFiles YES;killall Finder`
+22. Install mongodb: `brew install mongodb`
+23. Install mysql: `brew install homebrew/versions/mysql56;mysql.server start; mysql_secure_installation`
+24. [Install Redis](http://redis.io/download)
+25. Install webpack: `npm install -g webpack`
+26. Log into [Sunrise](https://calendar.sunrise.am/) :rip:
 
 
 ### Settlement phase
