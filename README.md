@@ -64,3 +64,4 @@ If you can even read this, you're probably on Google Chrome already... but the f
 7. [Sign into Pivotal Tracker](https://www.pivotaltracker.com/signin)
 8. [Download Lingo](https://www.lingoapp.com/)
 9. [jshint] `npm install -g jshint`
+10. [Install docker](www.docker.com)
