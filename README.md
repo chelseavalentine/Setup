@@ -51,7 +51,8 @@ If you can even read this, you're probably on Google Chrome already... but the f
 24. [Install Redis](http://redis.io/download)
 25. Install webpack: `npm install -g webpack`
 26. Log into [Sunrise](https://calendar.sunrise.am/) :rip:
-
+27. Install sbt (`brew install sbt`)
+28. Install log4j
 
 ### Settlement phase
 
