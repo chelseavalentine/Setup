@@ -53,6 +53,7 @@ If you can even read this, you're probably on Google Chrome already... but the f
 26. Log into [Sunrise](https://calendar.sunrise.am/) :rip:
 27. Install sbt (`brew install sbt`)
 28. Install log4j
+29. Install `less` source highlight: `brew install source-highlight`
 
 ### Settlement phase
 
