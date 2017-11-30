@@ -6,4 +6,5 @@ tell application "System Events"
   keystroke "install command"
   delay 1
   keystroke return
+  delay 3
 end tell
