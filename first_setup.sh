@@ -1,3 +1,36 @@
+# Clean the dock
+
+## Removing unused Apple programs
+
+## Pin Applications folder
+
+# Set System Preferences
+## Enable root user
+## Advanced optionsin Users & Groups: join the root group
+## Display full name
+## Display: Scaled & more space
+## Keyboard: Fast key repeat, short delay until repeat, adjust keyboard brightness, show keyboard & character viewers, add 2-set Korean keyboard
+## Trackpad: Enable all, speed up tracking speed
+## Dock: Smaller, a little magnification, automatically hide/show dock (?)
+## Date & time: display the time with seconds, show date
+## Open finder -> View -> Show path bar
+
+## Show all files in finder
+defaults write com.apple.Finder AppleShowAllFiles YES; killall Finder
+
+# Build programming environment
+
+## Workspace
+mkdir ~/Workspace
+
+## Portfolio
+mkdir ~/Portfolio
+
+## Terminal customization
+
+### `less`'s source highlight
+brew install source-highlight
+
 # Prepare the core programs to help us set up
 /usr/bin/ruby -e '$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)'
 brew install yarn
@@ -8,20 +41,22 @@ touch ~/.bash_profile
 echo 'alias sb="source ~/.bash_profile"' >> ~/.bash_profile
 source ~/.bash_profile
 
-# Upgrade Git
+# Upgrade and configure Git
 brew install git
 brew link --force git
+git config --global user.name "Chelsea Valentine"
+git config --global user.email cv851@nyu.edu
+git config --global push.default simple
+git config --global credential.helper osxkeychain
 
 # Create a place for all of our setup downloads
 rm -rf first_setup && mkdir first_setup && cd first_setup
 
-# Install Visual Studio Code
+# Install Visual Studio Code and its plugins
 wget 'https://az764295.vo.msecnd.net/stable/929bacba01ef658b873545e26034d1a8067445e9/VSCode-darwin-stable.zip'
 unzip VSCode-darwin-stable.zip
 sudo mv 'Visual Studio Code.app' /Applications/
-
-## Install VSCode plugins
-osascript ../setup_vscode_command.scpt
+osascript setup_vscode_command.scpt
 
 VSCODE_PLUGINS=(
   ### BASICS
@@ -73,3 +108,54 @@ for plugin in ${VSCODE_PLUGINS[@]}
 do
   code --install-extension $plugin
 done
+
+# Install JavaScript frameworks and tools
+brew install watchman phantomjs
+yarn install -g bower ember-cli webpack jslint
+
+# Install Python frameworks and tools
+## Pip and Pip3
+## Virtualenv
+
+## Django
+
+# Install deployment-related things
+## Google App Engine CLI setup
+
+# Install Clojure-related things
+
+# Install Java-related things
+
+## JDK 8
+## Android Studio
+## More APKs for Android
+
+brew install sbt
+
+# Databases
+brew install mongodb
+brew install homebrew/versions/mysql56;mysql.server start; mysql_secure_installation
+
+# Install programs
+## Google Chrome + enable warn before quitting (if possible)
+## Firefox
+## Spotify
+## Slack
+## Skype + login (https://unix.stackexchange.com/questions/151323/login-to-skype-from-terminal-or-any-other-way)
+## Sublime + setup preferences + package control
+## Sketch
+## Typora
+## IA Writer
+## IntelliJ
+## CLion
+## PyCharm
+## Lingo
+
+# Prepare programs (if possible)
+## Sync iBooks
+
+# Build the dock with most-used programs
+
+# Font downloads
+## Roboto
+## Noto
