@@ -21,7 +21,7 @@ unzip VSCode-darwin-stable.zip
 sudo mv 'Visual Studio Code.app' /Applications/
 
 ## Install VSCode plugins
-code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
+osascript ../setup_vscode_command.scpt
 
 VSCODE_PLUGINS=(
   ### BASICS
@@ -72,5 +72,4 @@ VSCODE_PLUGINS=(
 for plugin in ${VSCODE_PLUGINS[@]}
 do
   code --install-extension $plugin
-  echo "Installed VS Plugin: $plugin"
 done
