@@ -14,6 +14,7 @@
 ## Dock: Smaller, a little magnification, automatically hide/show dock (?)
 ## Date & time: display the time with seconds, show date
 ## Open finder -> View -> Show path bar
+## Show battery percentage
 
 ## Show all files in finder
 defaults write com.apple.Finder AppleShowAllFiles YES; killall Finder
@@ -26,7 +27,11 @@ mkdir ~/Workspace
 ## Portfolio
 mkdir ~/Portfolio
 
+## Add directories to favorites in Finder
 ## Terminal customization
+
+## Setup Vim
+brew install vim --override-system-vi
 
 ### `less`'s source highlight
 brew install source-highlight
@@ -111,7 +116,7 @@ done
 
 # Install JavaScript frameworks and tools
 brew install watchman phantomjs
-yarn install -g bower ember-cli webpack jslint
+yarn install -g typescript bower ember-cli webpack jslint
 
 # Install Python frameworks and tools
 ## Pip and Pip3
@@ -125,8 +130,8 @@ yarn install -g bower ember-cli webpack jslint
 # Install Clojure-related things
 
 # Install Java-related things
+brew cask install java
 
-## JDK 8
 ## Android Studio
 ## More APKs for Android
 
@@ -138,10 +143,30 @@ brew install homebrew/versions/mysql56;mysql.server start; mysql_secure_installa
 
 # Install programs
 ## Google Chrome + enable warn before quitting (if possible)
+
 ## Firefox
+wget 'https://download-installer.cdn.mozilla.net/pub/firefox/releases/57.0.1/mac/en-US/Firefox%2057.0.1.dmg'
+open "Firefox 57.0.1.dmg"
+sudo hdiutil attach "Firefox 57.0.1.dmg"
+sudo cp -a /Volumes/Firefox Firefox
+sudo mv Firefox/Firefox.app /Applications/
+
 ## Spotify
+wget 'https://download.scdn.co/SpotifyInstaller.zip'
+unzip SpotifyInstaller.zip
+open "Install Spotify.app"
+
 ## Slack
-## Skype + login (https://unix.stackexchange.com/questions/151323/login-to-skype-from-terminal-or-any-other-way)
+wget 'https://downloads.slack-edge.com/mac_releases/Slack-2.9.0-macOS.zip'
+unzip Slack-2.9.0-macOS.zip
+sudo mv Slack.app /Applications/
+
+## Skype
+wget 'https://endpoint920510.azureedge.net/s4l/s4l/download/mac/Skype-8.11.0.4.dmg'
+sudo hdiutil attach Skype-8.11.0.4.dmg
+sudo cp -a /Volumes/Skype Skype
+sudo mv Skype/Skype.app /Applications/
+
 ## Sublime + setup preferences + package control
 ## Sketch
 ## Typora
@@ -153,6 +178,8 @@ brew install homebrew/versions/mysql56;mysql.server start; mysql_secure_installa
 
 # Prepare programs (if possible)
 ## Sync iBooks
+
+## Can you sign into App Store via CL?
 
 # Build the dock with most-used programs
 
