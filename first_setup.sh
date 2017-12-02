@@ -22,10 +22,12 @@ defaults write com.apple.Finder AppleShowAllFiles YES; killall Finder
 # Build programming environment
 
 ## Workspace
-mkdir ~/Workspace
+git clone https://github.com/chelseavalentine/Notes ~/Workspace/Notes
+git clone https://github.com/chelseavalentine/Scripts ~/Workspace/Scripts
+git clone https://github.com/chelseavalentine/Problems ~/Workspace/Problems
 
 ## Portfolio
-mkdir ~/Portfolio
+git clone https://github.com/chelseavalentine/chulc.com ~/Portfolio/chulc
 
 ## Add directories to favorites in Finder
 ## Terminal customization
@@ -119,27 +121,35 @@ brew install watchman phantomjs
 yarn install -g typescript bower ember-cli webpack jslint
 
 # Install Python frameworks and tools
-## Pip and Pip3
-## Virtualenv
+brew install python3
+brew postinstall python3
+sudo easy_install pip
 
-## Django
+## Python modules
+sudo pip install virtualenv
+pip install Django
 
-# Install deployment-related things
-## Google App Engine CLI setup
-
-# Install Clojure-related things
+# Google App Engine CLI
+wget 'https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-180.0.1-darwin-x86_64.tar.gz'
+tar -xzf ~/Downloads/google-cloud-sdk-180.0.1-darwin-x86_64.tar.gz
+./google-cloud-sdk/install.sh
 
 # Install Java-related things
 brew cask install java
+brew install sbt
+brew install leiningen # Clojure's lein command
 
 ## Android Studio
 ## More APKs for Android
 
-brew install sbt
-
 # Databases
 brew install mongodb
 brew install homebrew/versions/mysql56;mysql.server start; mysql_secure_installation
+brew install redis
+
+brew install postgres
+echo 'alias pg-start="brew services start postgresql"' >> ~/.bash_profile
+echo 'alias pg-stop="brew services stop postgresql"' >> ~/.bash_profile
 
 # Install programs
 ## Google Chrome + enable warn before quitting (if possible)
@@ -184,5 +194,30 @@ sudo mv Skype/Skype.app /Applications/
 # Build the dock with most-used programs
 
 # Font downloads
-## Roboto
-## Noto
+brew tap caskroom/fonts
+brew cask install font-roboto
+brew cask install font-source-sans-pro font-source-serif-pro font-source-han-code-jp font-source-han-sans
+
+FONTS=(
+  'lato'
+  'noto-color-emoji'
+  'noto-emoji'
+  'noto-mono'
+  'noto-sans'
+  'open-sans'
+  'open-sans-condensed'
+  'pt-sans'
+  'roboto'
+  'roboto-condensed'
+  'roboto-mono'
+  'source-code-pro'
+  'source-han-code-jp'
+  'source-han-sans'
+  'source-sans-pro'
+  'source-serif-pro'
+)
+
+for font in ${FONTS[@]}
+do
+  brew cask install font-$font
+done
