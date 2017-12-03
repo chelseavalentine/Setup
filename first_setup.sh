@@ -1,15 +1,36 @@
 # Clean the dock
 
+## Reset the dock
+defaults delete com.apple.dock && \
+defaults read com.apple.dock tilesize -int 42
+killall Dock
+
+
 ## Removing unused Apple programs
 
 ## Pin Applications folder
 
 # Set System Preferences
-## Enable root user
-## Advanced optionsin Users & Groups: join the root group
-## Display full name
-## Display: Scaled & more space
-## Keyboard: Fast key repeat, short delay until repeat, adjust keyboard brightness, show keyboard & character viewers, add 2-set Korean keyboard
+## Enable root user (NOTE: Requires user entry.)
+dsenableroot
+
+## Join the root group
+sudo dseditgroup -o edit -a chelsea -t user admin
+
+## Display full name via Fast User Switching (TODO: Check whether this works)
+sudo defaults write /Library/Preferences/.GlobalPreferences MultipleSessionEnabled -bool TRUE
+sudo defaults write /Library/Preferences/com.apple.loginwindow SHOWFULLNAME -bool TRUE
+
+## Display: Scaled & more space (need to do this manually)
+
+## Keyboard: (Note, need to log in again to take effect) adjust keyboard brightness, show keyboard & character viewers, add 2-set Korean keyboard
+### Fast key repeat
+defaults write NSGlobalDomain KeyRepeat -int 2
+
+### No delay between key repeats
+defaults write NSGlobalDomain InitialKeyRepeat -int 0
+
+
 ## Trackpad: Enable all, speed up tracking speed
 ## Dock: Smaller, a little magnification, automatically hide/show dock (?)
 ## Date & time: display the time with seconds, show date
@@ -28,6 +49,11 @@ git clone https://github.com/chelseavalentine/Problems ~/Workspace/Problems
 
 ## Portfolio
 git clone https://github.com/chelseavalentine/chulc.com ~/Portfolio/chulc
+git clone https://github.com/chelseavalentine/winter ~/Portfolio/winter
+
+## Xcode
+### Install command line tools without Xcode
+xcode-select --install
 
 ## Add directories to favorites in Finder
 ## Terminal customization
@@ -221,3 +247,6 @@ for font in ${FONTS[@]}
 do
   brew cask install font-$font
 done
+
+cd ..
+sudo rm -rf first_setup
