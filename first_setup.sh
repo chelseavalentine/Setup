@@ -37,8 +37,16 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 0
 ## Open finder -> View -> Show path bar
 ## Show battery percentage
 
-## Show all files in finder
-defaults write com.apple.Finder AppleShowAllFiles YES; killall Finder
+defaults write -g AppleShowAllExtensions -bool true # Show all file extensions
+defaults write com.apple.Finder AppleShowAllFiles true # Show all files in finder
+chflags nohidden ~/Library # Show User ~/Library folder
+defaults write com.apple.finder QuitMenuItem -bool true # Show "Quit Finder" Menu Item
+defaults write com.apple.finder ShowPathbar -bool true # Show path bar
+killall Finder
+
+# Prepare the core programs to help us set up
+/usr/bin/ruby -e '$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)'
+brew install wget yarn cmake libtool automake
 
 # Build programming environment
 
@@ -63,11 +71,6 @@ brew install vim --override-system-vi
 
 ### `less`'s source highlight
 brew install source-highlight
-
-# Prepare the core programs to help us set up
-/usr/bin/ruby -e '$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)'
-brew install yarn
-brew install wget
 
 # Prepare the core files
 touch ~/.bash_profile
@@ -187,11 +190,6 @@ sudo hdiutil attach "Firefox 57.0.1.dmg"
 sudo cp -a /Volumes/Firefox Firefox
 sudo mv Firefox/Firefox.app /Applications/
 
-## Spotify
-wget 'https://download.scdn.co/SpotifyInstaller.zip'
-unzip SpotifyInstaller.zip
-open "Install Spotify.app"
-
 ## Slack
 wget 'https://downloads.slack-edge.com/mac_releases/Slack-2.9.0-macOS.zip'
 unzip Slack-2.9.0-macOS.zip
@@ -203,17 +201,46 @@ sudo hdiutil attach Skype-8.11.0.4.dmg
 sudo cp -a /Volumes/Skype Skype
 sudo mv Skype/Skype.app /Applications/
 
-## Sublime + setup preferences + package control
+## Spotify
+wget 'https://download.scdn.co/SpotifyInstaller.zip'
+unzip SpotifyInstaller.zip
+open "Install Spotify.app"
+
+## Sublime Text 3
+wget https://download.sublimetext.com/Sublime%20Text%20Build%203143.dmg
+sudo hdiutil attach Sublime\ Text\ Build\ 3143.dmg
+sudo cp -a /Volumes/Sublime\ Text/ Sublime
+sudo mv Sublime/Sublime\ Text.app/ /Applications/
+
+### Install Sublime Package Control and packages
+osascript add_sublime_package_control.scpt
+
 ## Sketch
+wget https://download.sketchapp.com/sketch-43.2-39069.zip
+unzip sketch-43.2-39069.zip
+sudo mv Sketch.app /Applications/
+
+## Transmission
+wget https://github.com/transmission/transmission-releases/raw/master/Transmission-2.92.dmg
+open Transmission-2.92.dmg
+sudo hdiutil attach Transmission-2.92.dmg
+sudo cp -a /Volumes/Transmission Transmission
+sudo mv Transmission/Transmission.app /Applications/
+
+## VLC Player
+wget https://ftp.osuosl.org/pub/videolan/vlc/2.2.8/macosx/vlc-2.2.8.dmg
+open vlc-2.2.8.dmg
+sudo hdiutil attach vlc-2.2.8.dmg
+sudo cp -a /Volumes/vlc-2.2.8 VLC
+sudo mv VLC/VLC.app /Applications/
+
 ## Typora
-## IA Writer
 ## IntelliJ
 ## CLion
 ## PyCharm
 ## Lingo
 
-# Prepare programs (if possible)
-## Sync iBooks
+# Prepare programs (if possible)              
 
 ## Can you sign into App Store via CL?
 
@@ -247,6 +274,9 @@ for font in ${FONTS[@]}
 do
   brew cask install font-$font
 done
+
+## Get SF Mono fonts
+cp -v /Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SFMono-* ~/Library/Fonts
 
 cd ..
 sudo rm -rf first_setup
