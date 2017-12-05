@@ -7,6 +7,19 @@ tell application "Sublime Text"
 		delay 1
 		keystroke return
 		delay 5
+		set PACKAGES to {"Agila Theme", "React ES6 Snippets", "Babel", "Babel Snippets", "HTML5", "SCSS", "SCSS Snippets", "HTMLAttributes", "GitGutter", "Color Highlighter", "JavaScript Completions", "JavaScript Snippets", "Pretty JSON", "Enhanced Clojure", "paredit", "Theme - Spacegray", "Handlebars", "Auto Close HTML Tags", "Dockerfile Syntax Highlighting", "Protobuf Syntax Hightlighting", "ES6-Toolkit", "Baobab React ES6 Snippets"}
+		repeat with i from 1 to number of items in PACKAGES
+			keystroke "p" using {command down, shift down}
+			delay 1
+			keystroke "install package"
+			delay 1
+			keystroke return
+			delay 1
+			keystroke (item i of PACKAGES)
+			delay 1
+			keystroke return
+		end repeat
+		delay 10
 	end tell
 	quit	
 end tell
