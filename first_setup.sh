@@ -181,7 +181,16 @@ echo 'alias pg-start="brew services start postgresql"' >> ~/.bash_profile
 echo 'alias pg-stop="brew services stop postgresql"' >> ~/.bash_profile
 
 # Install programs
-## Google Chrome + enable warn before quitting (if possible)
+
+## Google Chrome
+wget https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg
+open googlechrome.dmg
+sudo hdiutil attach googlechrome.dmg
+sudo cp -a /Volumes/Google\ Chrome Chrome
+sudo mv Chrome/Google\ Chrome.app /Applications/
+
+## Enable warn before quit. Assumes that the setting is second to last in main menu.
+osascript enable_chrome_warn_quit.scpt
 
 ## Firefox
 wget 'https://download-installer.cdn.mozilla.net/pub/firefox/releases/57.0.1/mac/en-US/Firefox%2057.0.1.dmg'
@@ -239,10 +248,6 @@ sudo mv VLC/VLC.app /Applications/
 ## CLion
 ## PyCharm
 ## Lingo
-
-# Prepare programs (if possible)              
-
-## Can you sign into App Store via CL?
 
 # Build the dock with most-used programs
 
