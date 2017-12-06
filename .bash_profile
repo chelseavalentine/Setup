@@ -20,7 +20,6 @@ alias gf="git fetch"
 
 # Other
 alias venv="source venv/bin/activate"
-alias lein="/Users/chelsea/bin/lein.txt"
 
 createAndEnterDir() {
   mkdir $1
@@ -32,10 +31,4 @@ alias new=createAndEnterDir
 
 # Paths
 export PATH="/Users/chelsea/bin/:$PATH"
-export PYTHONPATH="/Users/chelsea/Portfolio/chelseavday/:$PYTHONPATH"
-
-# The next line updates PATH for the Google Cloud SDK.
-source '/Users/chelsea/Downloads/google-cloud-sdk/path.bash.inc'
-
-# The next line enables shell command completion for gcloud.
-source '/Users/chelsea/Downloads/google-cloud-sdk/completion.bash.inc'
+export PYTHONPATH="/Users/chelsea/Portfolio/chulc/:$PYTHONPATH"
