@@ -68,6 +68,9 @@ xcode-select --install
 ## Terminal customization
 brew install source-highlight # `less`'s source highlight
 brew cask install iterm2
+rm -f ~/Library/Preferences/com.googlecode.iterm2.plist
+cp ../com.googlecode.iterm2.plist ~/Library/Preferences/
+touch ~/.private_profile
 cp .bash_profile ~/
 source ~/.bash_profile
 
@@ -142,6 +145,10 @@ VSCODE_PLUGINS=(
   'formulahendry.terminal' # Terminal
   'eg2.tslint' # TSLInt
   'pmneo.tsimporter' # TypeScript Importer
+  
+  ### Misc
+  'IBM.output-colorizer' # Colorized output
+  'cssho.vscode-svgviewer' # Viewing SVGs
 )
 
 for plugin in ${VSCODE_PLUGINS[@]}
