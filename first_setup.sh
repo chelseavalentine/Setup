@@ -5,12 +5,12 @@ defaults delete com.apple.dock && \
 defaults read com.apple.dock tilesize -int 42
 killall Dock
 
-
 ## Removing unused Apple programs
 
 ## Pin Applications folder
 
 # Set System Preferences
+
 ## Enable root user (NOTE: Requires user entry.)
 dsenableroot
 
@@ -64,18 +64,17 @@ git clone https://github.com/chelseavalentine/winter ~/Portfolio/winter
 xcode-select --install
 
 ## Add directories to favorites in Finder
+
 ## Terminal customization
-
-## Setup Vim
-brew install vim --override-system-vi
-
-### `less`'s source highlight
-brew install source-highlight
-
-# Prepare the core files
-touch ~/.bash_profile
-echo 'alias sb="source ~/.bash_profile"' >> ~/.bash_profile
+brew install source-highlight # `less`'s source highlight
+brew cask install iterm2
+cp .bash_profile ~/
 source ~/.bash_profile
+
+## Vim
+cp ../.vimrc ~/
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
 
 # Upgrade and configure Git
 brew install git
@@ -92,12 +91,13 @@ rm -rf first_setup && mkdir first_setup && cd first_setup
 wget 'https://az764295.vo.msecnd.net/stable/929bacba01ef658b873545e26034d1a8067445e9/VSCode-darwin-stable.zip'
 unzip VSCode-darwin-stable.zip
 sudo mv 'Visual Studio Code.app' /Applications/
-osascript setup_vscode_command.scpt
+osascript ../setup_vscode_command.scpt
 
 VSCODE_PLUGINS=(
   ### BASICS
   'formulahendry.auto-close-tag' # Auto close tags
   'steoates.autoimport' # Auto Import
+  'formulahendry.auto-rename-tag' # Auto rename tag
   'streetsidesoftware.code-spell-checker' # Code spell-checking
   'ionutvmi.path-autocomplete' # Path autocomplete
   '2gua.rainbow-brackets' # Rainbow brackets
@@ -124,6 +124,7 @@ VSCODE_PLUGINS=(
   
   ### THEMES
   'akamud.vscode-theme-onedark' # Atom One Dark
+  'teabyii.ayu' # Ayu
   'lkytal.FlatUI' # FlatUI
   'gustavo.theme-github-bold' # GitHub Bold
   'thenikso.github-plus-theme' # GitHub Plus
@@ -133,8 +134,11 @@ VSCODE_PLUGINS=(
   'ms-vscode.Theme-TomorrowKit' # Tomorrow and Tomorrow Night
 
   ### TOOLING
+  'ignd.html-css-class-completion' # CSS class names suggestions based on files (IntelliSense)
   'dbaeumer.vscode-eslint' # ESLint
   'wix.vscode-import-cost' # Import Cost
+  'christian-kohler.npm-intellisense' # NPM IntelliSense
+  'christian-kohler.path-intellisense' # Path IntelliSense
   'formulahendry.terminal' # Terminal
   'eg2.tslint' # TSLInt
   'pmneo.tsimporter' # TypeScript Importer
@@ -165,8 +169,10 @@ tar -xzf ~/Downloads/google-cloud-sdk-180.0.1-darwin-x86_64.tar.gz
 
 # Install Java-related things
 brew cask install java
-brew install sbt
+brew install scala sbt
 brew install leiningen # Clojure's lein command
+
+brew install golang
 
 ## Android Studio
 ## More APKs for Android
@@ -176,6 +182,7 @@ brew install mongodb
 brew install homebrew/versions/mysql56;mysql.server start; mysql_secure_installation
 brew install redis
 
+## postgress
 brew install postgres
 echo 'alias pg-start="brew services start postgresql"' >> ~/.bash_profile
 echo 'alias pg-stop="brew services stop postgresql"' >> ~/.bash_profile
@@ -190,7 +197,7 @@ sudo cp -a /Volumes/Google\ Chrome Chrome
 sudo mv Chrome/Google\ Chrome.app /Applications/
 
 ## Enable warn before quit. Assumes that the setting is second to last in main menu.
-osascript enable_chrome_warn_quit.scpt
+osascript ../enable_chrome_warn_quit.scpt
 
 ## Firefox
 wget 'https://download-installer.cdn.mozilla.net/pub/firefox/releases/57.0.1/mac/en-US/Firefox%2057.0.1.dmg'
@@ -222,7 +229,7 @@ sudo cp -a /Volumes/Sublime\ Text/ Sublime
 sudo mv Sublime/Sublime\ Text.app/ /Applications/
 
 ### Install Sublime Package Control and packages
-osascript add_sublime_package_control.scpt
+osascript ../add_sublime_package_control.scpt
 
 ## Sketch
 wget https://download.sketchapp.com/sketch-43.2-39069.zip
