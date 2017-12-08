@@ -1,8 +1,6 @@
 # Default text editor
 export VISUAL=vim
 export EDITOR="$VISUAL"
-export PS1="\[\033[00;36m\]\d \[\033[1;36m\]\t  \[\033[1;34m\]\u \[\033[1;37m\]@ \[\033[1;33m\]\w \[\033[1;37m\]\$ \[\033[0;37m\]"
-
 
 # Colors
 NO_COLOR="\[\033[0m\]"
@@ -23,18 +21,14 @@ CYAN="\[\033[0;36m\]"
 BOLD_WHITE="\[\033[1;37m\]"
 WHITE="\[\033[0;37m\]"
 
+export GIT_PS1_SHOWDIRTYSTATE=true 
 source ~/.git-prompt.sh
-export PS1="${CYAN}$(date '+%a %m/%d') ${BOLD_CYAN}\t > ${BOLD_BLUE}\u ${WHTE}> @ ${BOLD_YELLOW}\w ${BOLD_RED}(\`__git_ps1 "%s"\`*)
-${BOLD_WHTE}\$ ${WHITE}"
 
 parse_git_branch() {
-    git branch |
-    grep '*' |
-    while read line;
-    do [ -z "$line" ] && continue;
-	    echo ${line##* };
-    done;
+  __git_ps1 '[%s]'
 }
+
+export PS1="${CYAN}$(date '+%a %m/%d') ${BOLD_CYAN}\t  ${BOLD_BLUE}\u ${WHITE}@ ${BOLD_YELLOW}\w ${BOLD_ORANGE}$(parse_git_branch) ${BOLD_WHITE}\$ ${WHITE}"
 
 alias sourceprivate="source ~/.private_profile"
 alias sb="source ~/.bash_profile; sourceprivate"
@@ -58,6 +52,7 @@ export LESS_TERMCAP_ue=$'\e[0m'           # end underline
 export LESS_TERMCAP_us=$'\e[04;38;5;146m' # begin underline
 
 # Git
+alias gd="git diff"
 alias gs="git status"
 alias gc="git checkout"
 alias gb="git branch"

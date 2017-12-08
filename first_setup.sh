@@ -27,8 +27,8 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow SHOWFULLNAME -boo
 ### Fast key repeat
 defaults write NSGlobalDomain KeyRepeat -int 2
 
-### No delay between key repeats
-defaults write NSGlobalDomain InitialKeyRepeat -int 0
+### Short delay between key repeats
+defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
 
 ## Trackpad: Enable all, speed up tracking speed
@@ -45,8 +45,9 @@ defaults write com.apple.finder ShowPathbar -bool true # Show path bar
 killall Finder
 
 # Prepare the core programs to help us set up
-/usr/bin/ruby -e '$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)'
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install wget yarn cmake libtool automake
+brew instal vim --with-override-system-vi
 
 # Build programming environment
 
@@ -70,6 +71,8 @@ brew install source-highlight # `less`'s source highlight
 brew cask install iterm2
 rm -f ~/Library/Preferences/com.googlecode.iterm2.plist
 cp com.googlecode.iterm2.plist ~/Library/Preferences/
+wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+mv git-prompt.sh ~/.git-prompt.sh
 touch ~/.private_profile
 cp .bash_profile ~/
 source ~/.bash_profile
@@ -94,7 +97,7 @@ rm -rf first_setup && mkdir first_setup && cd first_setup
 wget 'https://az764295.vo.msecnd.net/stable/929bacba01ef658b873545e26034d1a8067445e9/VSCode-darwin-stable.zip'
 unzip VSCode-darwin-stable.zip
 sudo mv 'Visual Studio Code.app' /Applications/
-osascript setup_vscode_command.scpt
+osascript ../setup_vscode_command.scpt
 
 VSCODE_PLUGINS=(
   ### BASICS
@@ -211,7 +214,7 @@ sudo cp -a /Volumes/Google\ Chrome Chrome
 sudo mv Chrome/Google\ Chrome.app /Applications/
 
 ## Enable warn before quit. Assumes that the setting is second to last in main menu.
-osascript enable_chrome_warn_quit.scpt
+osascript ../enable_chrome_warn_quit.scpt
 
 ## Firefox
 wget 'https://download-installer.cdn.mozilla.net/pub/firefox/releases/57.0.1/mac/en-US/Firefox%2057.0.1.dmg'
@@ -257,7 +260,7 @@ sudo cp -a /Volumes/Sublime\ Text/ Sublime
 sudo mv Sublime/Sublime\ Text.app/ /Applications/
 
 ### Install Sublime Package Control and packages
-osascript add_sublime_package_control.scpt
+osascript ../add_sublime_package_control.scpt
 
 ## Sketch
 wget https://download.sketchapp.com/sketch-43.2-39069.zip
@@ -285,10 +288,6 @@ sudo hdiutil attach vlc-2.2.8.dmg
 sudo cp -a /Volumes/vlc-2.2.8 VLC
 sudo mv VLC/VLC.app /Applications/
 
-## Typora
-## IntelliJ
-## CLion
-## PyCharm
 ## Lingo
 
 # Build the dock with most-used programs
