@@ -1,13 +1,13 @@
 # Clean the dock
 
 ## Reset the dock
-defaults delete com.apple.dock && \
-defaults read com.apple.dock tilesize -int 42
+defaults write com.apple.dock tilesize -int 40
+defaults write com.apple.dock persistent-apps '()'
 killall Dock
 
-## Removing unused Apple programs
-
 ## Pin Applications folder
+open /
+osascript pin_applications_folder.scpt
 
 # Set System Preferences
 
@@ -21,21 +21,28 @@ sudo dseditgroup -o edit -a chelsea -t user admin
 sudo defaults write /Library/Preferences/.GlobalPreferences MultipleSessionEnabled -bool TRUE
 sudo defaults write /Library/Preferences/com.apple.loginwindow SHOWFULLNAME -bool TRUE
 
-## Display: Scaled & more space (need to do this manually)
-
 ## Keyboard: (Note, need to log in again to take effect) adjust keyboard brightness, show keyboard & character viewers, add 2-set Korean keyboard
-### Fast key repeat
-defaults write NSGlobalDomain KeyRepeat -int 2
+defaults write NSGlobalDomain KeyRepeat -int 2 # Fast key repeat
+defaults write NSGlobalDomain InitialKeyRepeat -int 15 # Short delay between key repeats
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false # Disable smart quotes
 
-### Short delay between key repeats
-defaults write NSGlobalDomain InitialKeyRepeat -int 15
+defaults write com.apple.inputmethod.Korean CandidateFontSize -int 24 # Size 24 Korean text
 
 
 ## Trackpad: Enable all, speed up tracking speed
-## Dock: Smaller, a little magnification, automatically hide/show dock (?)
-## Date & time: display the time with seconds, show date
-## Open finder -> View -> Show path bar
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true # Tap to click
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadPinch -bool true # Pinch to zoom
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRotate -bool true # Can rotate
+
+
+## Dock:  a little magnification, automatically hide/show dock (?)
+defaults write com.apple.dock autohide-time-modifier -float 0.15 # Show dock faster
+
+## Date & time: show date
+defaults write com.apple.menuextra.clock --DateFormat "EEE h:mm:ss a" # Display time with seconds
 ## Show battery percentage
+defaults write com.apple.menuextra.battery ShowPercent YES
+killall SystemUIServer
 
 defaults write -g AppleShowAllExtensions -bool true # Show all file extensions
 defaults write com.apple.Finder AppleShowAllFiles true # Show all files in finder
@@ -161,7 +168,7 @@ done
 
 # Install JavaScript frameworks and tools
 brew install watchman phantomjs
-yarn install -g typescript bower ember-cli webpack jslint
+yarn install -g typescript bower ember-cli webpack jshint
 
 # Install Python frameworks and tools
 brew install python3
@@ -230,6 +237,13 @@ sudo hdiutil attach ideaIU-2017.3.dmg
 sudo cp -a /Volumes/IntelliJ\ IDEA/ IntelliJ
 sudo mv IntelliJ/IntelliJ\ IDEA.app/ /Applications/
 
+## Lingo
+wget 'https://nounproject.s3.amazonaws.com/lingo/Lingo.dmg'
+open Lingo.dmg
+sudo hdiutil attach Lingo.dmg
+sudo cp -a /Volumes/Lingo Lingo
+sudo mv Lingo/Lingo.app /Applications/
+
 ## PyCharm
 wget https://download.jetbrains.com/python/pycharm-professional-2017.3.dmg
 open pycharm-professional-2017.3.dmg
@@ -288,10 +302,6 @@ sudo hdiutil attach vlc-2.2.8.dmg
 sudo cp -a /Volumes/vlc-2.2.8 VLC
 sudo mv VLC/VLC.app /Applications/
 
-## Lingo
-
-# Build the dock with most-used programs
-
 # Font downloads
 brew tap caskroom/fonts
 brew cask install font-roboto
@@ -324,5 +334,16 @@ done
 ## Get SF Mono fonts
 cp -v /Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SFMono-* ~/Library/Fonts
 
+# Build dock with the most-used programs
+wget https://raw.githubusercontent.com/kcrawford/dockutil/master/scripts/dockutil
+
+python dockutil --add "/Applications/Google Chrome.app"
+python dockutil --add "/Applications/iBooks.app"
+python dockutil --add "/Applications/Calendar.app"
+python dockutil --add "/Applications/Spotify.app"
+python dockutil --add "/Applications/iTerm.app"
+python dockutil --add "/Applications/Visual Studio Code.app"
+python dockutil --add "/Applications/Sketch.app"
+python dockutil --add "/Applications/Skype.app"
+
 cd ..
-sudo rm -rf first_setup
