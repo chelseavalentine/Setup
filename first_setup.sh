@@ -69,13 +69,13 @@ xcode-select --install
 brew install source-highlight # `less`'s source highlight
 brew cask install iterm2
 rm -f ~/Library/Preferences/com.googlecode.iterm2.plist
-cp ../com.googlecode.iterm2.plist ~/Library/Preferences/
+cp com.googlecode.iterm2.plist ~/Library/Preferences/
 touch ~/.private_profile
 cp .bash_profile ~/
 source ~/.bash_profile
 
 ## Vim
-cp ../.vimrc ~/
+cp .vimrc ~/
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 
@@ -94,7 +94,7 @@ rm -rf first_setup && mkdir first_setup && cd first_setup
 wget 'https://az764295.vo.msecnd.net/stable/929bacba01ef658b873545e26034d1a8067445e9/VSCode-darwin-stable.zip'
 unzip VSCode-darwin-stable.zip
 sudo mv 'Visual Studio Code.app' /Applications/
-osascript ../setup_vscode_command.scpt
+osascript setup_vscode_command.scpt
 
 VSCODE_PLUGINS=(
   ### BASICS
@@ -196,6 +196,13 @@ echo 'alias pg-stop="brew services stop postgresql"' >> ~/.bash_profile
 
 # Install programs
 
+## CLion
+wget https://download-cf.jetbrains.com/cpp/CLion-2017.3.dmg
+open CLion-2017.3.dmg
+sudo hdiutil attach CLion-2017.3.dmg
+sudo cp -a /Volumes/CLion/ CLion
+sudo mv CLion/CLion.app/ /Applications/
+
 ## Google Chrome
 wget https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg
 open googlechrome.dmg
@@ -204,7 +211,7 @@ sudo cp -a /Volumes/Google\ Chrome Chrome
 sudo mv Chrome/Google\ Chrome.app /Applications/
 
 ## Enable warn before quit. Assumes that the setting is second to last in main menu.
-osascript ../enable_chrome_warn_quit.scpt
+osascript enable_chrome_warn_quit.scpt
 
 ## Firefox
 wget 'https://download-installer.cdn.mozilla.net/pub/firefox/releases/57.0.1/mac/en-US/Firefox%2057.0.1.dmg'
@@ -212,6 +219,20 @@ open "Firefox 57.0.1.dmg"
 sudo hdiutil attach "Firefox 57.0.1.dmg"
 sudo cp -a /Volumes/Firefox Firefox
 sudo mv Firefox/Firefox.app /Applications/
+
+## IntelliJ
+wget 'https://download-cf.jetbrains.com/idea/ideaIU-2017.3.dmg'
+open 'ideaIU-2017.3.dmg'
+sudo hdiutil attach ideaIU-2017.3.dmg
+sudo cp -a /Volumes/IntelliJ\ IDEA/ IntelliJ
+sudo mv IntelliJ/IntelliJ\ IDEA.app/ /Applications/
+
+## PyCharm
+wget https://download.jetbrains.com/python/pycharm-professional-2017.3.dmg
+open pycharm-professional-2017.3.dmg
+sudo hdiutil attach pycharm-professional-2017.3.dmg
+sudo cp -a /Volumes/PyCharm/ PyCharm
+sudo mv PyCharm/PyCharm.app/ /Applications/
 
 ## Slack
 wget 'https://downloads.slack-edge.com/mac_releases/Slack-2.9.0-macOS.zip'
@@ -236,7 +257,7 @@ sudo cp -a /Volumes/Sublime\ Text/ Sublime
 sudo mv Sublime/Sublime\ Text.app/ /Applications/
 
 ### Install Sublime Package Control and packages
-osascript ../add_sublime_package_control.scpt
+osascript add_sublime_package_control.scpt
 
 ## Sketch
 wget https://download.sketchapp.com/sketch-43.2-39069.zip
@@ -249,6 +270,13 @@ open Transmission-2.92.dmg
 sudo hdiutil attach Transmission-2.92.dmg
 sudo cp -a /Volumes/Transmission Transmission
 sudo mv Transmission/Transmission.app /Applications/
+
+## Typora
+wget https://www.typora.io/download/Typora-0.9.9.10.9.dmg
+open Typora-0.9.9.10.9.dmg
+sudo hdiutil attach Typora-0.9.9.10.9.dmg
+sudo cp -a /Volumes/Typora/ Typora
+sudo mv Typora/Typora.app /Applications/
 
 ## VLC Player
 wget https://ftp.osuosl.org/pub/videolan/vlc/2.2.8/macosx/vlc-2.2.8.dmg
