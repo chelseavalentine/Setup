@@ -28,7 +28,7 @@ parse_git_branch() {
   __git_ps1 '[%s]'
 }
 
-export PS1="${CYAN}$(date '+%a %m/%d') ${BOLD_CYAN}\t  ${BOLD_BLUE}\u ${WHITE}@ ${BOLD_YELLOW}\w ${BOLD_ORANGE}$(parse_git_branch) ${BOLD_WHITE}\$ ${WHITE}"
+export PS1="${CYAN}\$(date '+%a %m/%d') ${BOLD_CYAN}\t  ${BOLD_BLUE}\u ${WHITE}@ ${BOLD_YELLOW}\w ${BOLD_ORANGE}\$(parse_git_branch) ${BOLD_WHITE}\$ ${WHITE}"
 
 alias sourceprivate="source ~/.private_profile"
 alias sb="source ~/.bash_profile; sourceprivate"
