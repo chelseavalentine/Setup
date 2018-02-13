@@ -15,5 +15,4 @@ tell application "Google Chrome"
     delay 0.2
     keystroke return
   end tell
-  quit
 end tell
