@@ -21,6 +21,9 @@ CYAN="\[\033[0;36m\]"
 BOLD_WHITE="\[\033[1;37m\]"
 WHITE="\[\033[0;37m\]"
 
+# Setup git branch tab autocompletion
+test -f ~/.git-completion.bash && . $_
+
 export GIT_PS1_SHOWDIRTYSTATE=true 
 source ~/.git-prompt.sh
 
