@@ -97,6 +97,9 @@ git config --global user.email cv851@nyu.edu
 git config --global push.default simple
 git config --global credential.helper osxkeychain
 
+### Setup git branch autocomplete
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
+
 # Create a place for all of our setup downloads
 rm -rf first_setup && mkdir first_setup && cd first_setup
 
