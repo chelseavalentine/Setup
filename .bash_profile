@@ -33,16 +33,15 @@ parse_git_branch() {
 
 export PS1="${CYAN}\$(date '+%a %m/%d') ${BOLD_CYAN}\t  ${BOLD_BLUE}\u ${WHITE}@ ${BOLD_YELLOW}\w ${BOLD_ORANGE}\$(parse_git_branch) ${BOLD_WHITE}\$ ${WHITE}"
 
-alias sourceprivate="source ~/.private_profile"
-alias sb="source ~/.bash_profile; sourceprivate"
+alias sb="source ~/.bash_profile"
 
 # General
 alias ls="ls -aCGp"
 alias rm="rm -i"
+alias less="less -mNgiJR"
 
 export LESSOPEN="| /usr/local/bin/src-hilite-lesspipe.sh %s"
 export LESS=" -R "
-alias less="less -mNgiJR"
 
 # man pages syntax highlighting
 # Source: Todd Weed: https://goo.gl/ZSbwZI
@@ -65,23 +64,12 @@ alias gpo="git pull origin"
 alias gr="git remote"
 alias gfp="git fetch -p"
 alias gf="git fetch"
+alias gs="git status"
+alias gl="git log"
 
-commitMsg() {
-  git commit -m "$1"
-}
-
-alias gcm=commitMsg
 
 # Other
 alias venv="source venv/bin/activate"
-
-createAndEnterDir() {
-  mkdir $1
-  cd $1
-  git init
-}
-
-alias new=createAndEnterDir
 
 # Paths
 export PATH="/Users/chelsea/bin/:$PATH"
